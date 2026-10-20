@@ -3,110 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bách Premium - Admin Key System V12</title>
+<title>Admin Key System - Full</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-    body {
-        font-family: 'Segoe UI', sans-serif;
-        background: #0a0a0c;
-        color: #fff;
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
-    .animated-bg {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: linear-gradient(45deg, #0a0a0c, #15151a, #0a0a0c);
-        background-size: 400% 400%;
-        animation: gradientMove 15s ease infinite;
-        z-index: -1;
-    }
-    @keyframes gradientMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    .card {
-        background: rgba(18, 18, 22, 0.95);
-        border: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.05);
-        backdrop-filter: blur(20px);
-        border-radius: 8px;
-    }
-    .glow {
-        animation: glowPulse 2s ease-in-out infinite;
-    }
-    @keyframes glowPulse {
-        0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
-        50% { box-shadow: 0 0 20px rgba(255,255,255,0.4); }
-    }
-    .btn-white {
-        background: #fff;
-        color: #000;
-        transition: all 0.2s;
-    }
-    .btn-white:hover {
-        background: #e0e0e0;
-        transform: scale(1.02);
-    }
-    .btn-white:active {
-        transform: scale(0.98);
-    }
-    .btn-dark {
-        background: #24242c;
-        color: #ccc;
-        border: 1px solid #3c3c44;
-        transition: all 0.2s;
-    }
-    .btn-dark:hover {
-        background: #303038;
-        color: #fff;
-    }
-    .input-dark {
-        background: #1c1c20;
-        color: #fff;
-        border: 1px solid #3c3c44;
-        transition: all 0.2s;
-    }
-    .input-dark:focus {
-        border-color: #fff;
-        outline: none;
-    }
-    .type-btn {
-        transition: all 0.2s;
-    }
-    .type-btn.active {
-        background: #fff;
-        color: #000;
-    }
-    .type-btn:not(.active) {
-        background: #24242c;
-        color: #aaa;
-        border: 1px solid #3c3c44;
-    }
-    .type-btn:not(.active):hover {
-        background: #303038;
-        color: #fff;
-    }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0a0a0c; }
-    ::-webkit-scrollbar-thumb { background: #3c3c44; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #fff; }
-    .key-mono {
-        font-family: 'Courier New', monospace;
-        letter-spacing: 1px;
-    }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0a0c; color: #fff; height: 100vh; margin: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, #0a0a0c, #15151a, #0a0a0c); background-size: 400% 400%; animation: gradientMove 15s ease infinite; z-index: -1; }
+    @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .card { background: rgba(18, 18, 22, 0.98); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 60px rgba(0,0,0,0.8); border-radius: 8px; width: 100%; max-width: 420px; max-height: 90vh; display: flex; flex-direction: column; }
+    .scroll-area { overflow-y: auto; flex-grow: 1; }
+    .scroll-area::-webkit-scrollbar { width: 6px; }
+    .scroll-area::-webkit-scrollbar-thumb { background: #3c3c44; border-radius: 3px; }
+    .btn-white { background: #fff; color: #000; transition: 0.2s; font-weight: bold; }
+    .btn-white:hover { background: #e0e0e0; }
+    .input-dark { background: #1c1c20; color: #fff; border: 1px solid #3c3c44; }
+    .input-dark:focus { border-color: #fff; outline: none; }
+    .type-btn.active { background: #fff; color: #000; }
+    .type-btn:not(.active) { background: #24242c; color: #aaa; border: 1px solid #3c3c44; }
+    .type-btn:not(.active):hover { background: #303038; color: #fff; }
+    .key-mono { font-family: 'Courier New', monospace; letter-spacing: 1px; }
 </style>
 </head>
-<body class="flex items-center justify-center p-4">
+<body>
 <div class="animated-bg"></div>
 
 <!-- LOGIN -->
-<div id="loginScreen" class="w-full max-w-sm card glow p-8 relative overflow-hidden">
+<div id="loginScreen" class="card p-8 relative">
     <div class="text-center mb-8">
-        <h1 class="text-2xl font-black text-white tracking-wider">BÁCH PREMIUM</h1>
-        <p class="text-xs text-gray-400 mt-1">Hệ thống quản trị Admin</p>
+        <h1 class="text-2xl font-black text-white">ADMIN SYSTEM</h1>
+        <p class="text-xs text-gray-400 mt-1">Quản lý Key</p>
     </div>
     <div class="space-y-4">
         <div>
@@ -118,65 +42,102 @@
             <input type="password" id="password" class="w-full input-dark text-sm px-4 py-3 rounded-md" placeholder="Nhập mật khẩu...">
         </div>
         <p id="loginError" class="text-red-500 text-xs font-bold hidden text-center">Sai tài khoản hoặc mật khẩu!</p>
-        <button onclick="handleLogin()" class="w-full py-4 rounded-md btn-white font-extrabold text-sm mt-2">ĐĂNG NHẬP</button>
+        <button onclick="handleLogin()" class="w-full py-4 rounded-md btn-white text-sm mt-2">ĐĂNG NHẬP</button>
     </div>
 </div>
 
 <!-- MAIN -->
-<div id="mainScreen" class="hidden w-full max-w-md card p-0 overflow-hidden">
-    <div class="bg-[#18181c] p-5 border-b border-gray-800 flex justify-between items-center">
-        <div>
-            <h1 class="text-lg font-black text-white tracking-wider">TẠO KEY</h1>
-            <p class="text-[10px] text-gray-400 mt-0.5">Bách Premium V12</p>
+<div id="mainScreen" class="card hidden">
+    <!-- Header -->
+    <div class="bg-[#18181c] p-4 border-b border-gray-800 flex justify-between items-center shrink-0">
+        <div class="flex items-center gap-3">
+            <!-- Nút 3 Gạch -->
+            <button onclick="toggleMenu()" class="text-white hover:text-gray-300 p-1 bg-[#24242c] rounded border border-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <div>
+                <h1 class="text-lg font-black text-white" id="menuTitle">BÁCH PREMIUM</h1>
+                <p class="text-[10px] text-gray-400">Hệ thống tạo Key</p>
+            </div>
         </div>
-        <button onclick="logout()" class="text-xs text-red-400 hover:text-red-300 font-bold bg-red-400/10 px-3 py-1.5 rounded transition">Đăng xuất</button>
+        <button onclick="logout()" class="text-xs text-red-400 font-bold bg-red-400/10 px-3 py-1.5 rounded">Đăng xuất</button>
     </div>
 
-    <div class="p-5 space-y-4">
-        <!-- Thống kê -->
-        <div class="bg-[#1c1c20] rounded-md p-4 border border-gray-800 flex justify-between items-center">
-            <div class="text-xs text-gray-400">Số Key còn lại:</div>
-            <div id="keyCount" class="text-lg font-black text-white">0</div>
-        </div>
+    <!-- Sidebar Menu -->
+    <div id="sideMenu" class="hidden bg-[#1a1a20] p-3 border-b border-gray-800 shrink-0">
+        <button onclick="switchApp('bach')" class="w-full text-left px-4 py-2 text-sm font-bold text-white hover:bg-gray-800 rounded mb-1">Bách Premium (1H, 24H, 1M, VIP)</button>
+        <button onclick="switchApp('cheatpro')" class="w-full text-left px-4 py-2 text-sm font-bold text-white hover:bg-gray-800 rounded mb-1">CheatPro (1H, 24H, 1M, 1Y)</button>
+        <button onclick="switchTab('inputKey')" class="w-full text-left px-4 py-2 text-sm font-bold text-green-400 hover:bg-gray-800 rounded">NHẬP KEY (Kiểm tra)</button>
+    </div>
 
-        <!-- Tổng key đã tạo -->
-        <div class="bg-[#1c1c20] rounded-md p-4 border border-gray-800 flex justify-between items-center">
-            <div class="text-xs text-gray-400">Đã tạo:</div>
-            <div id="totalCreated" class="text-sm font-bold text-gray-300">0</div>
-        </div>
+    <!-- Scroll Area -->
+    <div class="p-5 space-y-4 scroll-area">
+        
+        <!-- PHẦN TẠO KEY (Hiện mặc định) -->
+        <div id="sectionCreate">
+            <!-- Thống kê -->
+            <div class="grid grid-cols-2 gap-2 mb-4">
+                <div class="bg-[#1c1c20] rounded-md p-3 border border-gray-800 flex flex-col items-center">
+                    <div class="text-[10px] text-gray-400 mb-1">Số Key còn lại</div>
+                    <div id="keyCount" class="text-lg font-black text-white">0</div>
+                </div>
+                <div class="bg-[#1c1c20] rounded-md p-3 border border-gray-800 flex flex-col items-center">
+                    <div class="text-[10px] text-gray-400 mb-1">Đã tạo</div>
+                    <div id="totalCreated" class="text-lg font-black text-gray-300">0</div>
+                </div>
+            </div>
 
-        <!-- Chọn loại -->
-        <div>
-            <label class="block text-xs font-bold text-gray-300 mb-2 uppercase tracking-wide">Chọn thời hạn Key:</label>
-            <div class="grid grid-cols-2 gap-2">
-                <button onclick="selectType('1H', this)" class="type-btn active py-2.5 px-3 rounded-md text-xs font-bold">1 Giờ (1H)</button>
-                <button onclick="selectType('24H', this)" class="type-btn py-2.5 px-3 rounded-md text-xs font-bold">1 Ngày (24H)</button>
-                <button onclick="selectType('1M', this)" class="type-btn py-2.5 px-3 rounded-md text-xs font-bold">1 Tháng (1M)</button>
-                <button onclick="selectType('VIP', this)" class="type-btn py-2.5 px-3 rounded-md text-xs font-bold">Vĩnh Viễn (VIP)</button>
+            <!-- Chọn loại -->
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-gray-300 mb-2 uppercase tracking-wide">Chọn thời hạn Key:</label>
+                <div id="typeContainer" class="grid grid-cols-2 gap-2">
+                    <!-- Tự động tạo -->
+                </div>
+            </div>
+
+            <!-- Số lượng tạo -->
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-gray-300 mb-2 uppercase tracking-wide">Số lượng muốn tạo:</label>
+                <input type="number" id="amountCreate" value="1" min="1" max="50" class="w-full input-dark text-sm px-4 py-3 rounded-md">
+            </div>
+
+            <button onclick="generateKey()" class="w-full py-4 rounded-md btn-white text-sm mb-4">TẠO KEY NGAY</button>
+
+            <!-- Kết quả -->
+            <div id="resultContainer" class="hidden space-y-2 pt-2">
+                <label class="block text-xs font-bold text-white">Key của bạn:</label>
+                <textarea id="keyOutput" readonly rows="3" class="key-mono w-full input-dark text-white font-bold text-sm px-4 py-3 rounded-md resize-none"></textarea>
+                <button onclick="copyKey()" class="w-full py-2 bg-[#3c3c44] hover:bg-[#4c4c54] text-white rounded text-xs font-bold">COPY TẤT CẢ</button>
+                <p id="copyStatus" class="text-[11px] text-green-400 text-right hidden">Đã sao chép!</p>
             </div>
         </div>
 
-        <!-- Số lượng muốn tạo -->
-        <div>
-            <label class="block text-xs font-bold text-gray-300 mb-2 uppercase tracking-wide">Số lượng muốn tạo:</label>
-            <input type="number" id="amount" value="1" min="1" max="100" class="w-full input-dark text-sm px-4 py-3 rounded-md">
-        </div>
-
-        <button onclick="generateKey()" id="genBtn" class="w-full py-4 rounded-md btn-white font-extrabold text-sm">TẠO KEY NGAY</button>
-
-        <!-- Kết quả -->
-        <div id="resultContainer" class="hidden space-y-2 pt-2">
-            <label class="block text-xs font-bold text-white">Key của bạn (Bảo mật - Không chia sẻ):</label>
-            <div class="flex items-center gap-2">
-                <input type="text" id="keyOutput" readonly class="key-mono w-full input-dark text-white font-bold text-sm px-4 py-3 rounded-md">
-                <button onclick="copyKey()" id="copyBtn" class="btn-dark px-4 py-3 rounded-md text-xs font-bold">Copy</button>
+        <!-- PHẦN NHẬP KEY (Ẩn mặc định) -->
+        <div id="sectionInputKey" class="hidden">
+            <h2 class="text-sm font-bold text-green-400 mb-3 border-b border-gray-700 pb-2">NHẬP KEY ĐỂ KIỂM TRA</h2>
+            
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-gray-300 mb-2 uppercase">Số lượng Key cần nhập:</label>
+                <input type="number" id="amountInput" value="1" min="1" max="100" class="w-full input-dark text-sm px-4 py-3 rounded-md">
             </div>
-            <p id="copyStatus" class="text-[11px] text-green-400 text-right hidden">Đã sao chép!</p>
+
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-gray-300 mb-2 uppercase">Dán Key vào đây (Mỗi dòng 1 Key):</label>
+                <textarea id="keyInputArea" rows="5" class="key-mono w-full input-dark text-white font-bold text-sm px-4 py-3 rounded-md resize-none" placeholder="CHEATPRO-1Y-Ab12-Xy34Z&#10;BACH-VIP-1234-5678AB"></textarea>
+            </div>
+
+            <button onclick="checkInputKeys()" class="w-full py-3 rounded-md btn-white text-sm mb-4">KIỂM TRA KEY</button>
+
+            <div id="checkResult" class="hidden bg-[#1c1c20] border border-gray-700 rounded-md p-4">
+                <p class="text-xs text-gray-400 mb-2">Kết quả kiểm tra:</p>
+                <div id="checkText" class="text-sm font-bold text-green-400"></div>
+            </div>
         </div>
+
     </div>
 
-    <div class="bg-[#121215] px-5 py-3 text-center border-t border-gray-800">
-        <p class="text-[10px] text-gray-500">© 2026 Bách Premium - All Rights Reserved</p>
+    <div class="bg-[#121215] px-5 py-3 text-center border-t border-gray-800 shrink-0">
+        <p class="text-[10px] text-gray-500">© 2026 Admin - All Rights Reserved</p>
     </div>
 </div>
 
@@ -184,155 +145,211 @@
 const ADMIN_USER = "DfnA0hqi751";
 const ADMIN_PASS = "Bachdepzai123@";
 
-// Giới hạn key theo loại
-const KEY_LIMITS = {
-    "1H": 300000,
-    "24H": 300000,
-    "1M": 10000,
-    "VIP": 2500
+const Apps = {
+    bach: {
+        name: "BÁCH PREMIUM",
+        prefix: "BACH",
+        types: [
+            { id: "1H", name: "1 Giờ", limit: 300000 },
+            { id: "24H", name: "1 Ngày", limit: 300000 },
+            { id: "1M", name: "1 Tháng", limit: 10000 },
+            { id: "VIP", name: "Vĩnh Viễn", limit: 2500 }
+        ]
+    },
+    cheatpro: {
+        name: "CHEATPRO",
+        prefix: "CHEATPRO",
+        types: [
+            { id: "1H", name: "1 Giờ", limit: 500000 },
+            { id: "24H", name: "1 Ngày", limit: 200000 },
+            { id: "1M", name: "1 Tháng", limit: 50000 },
+            { id: "1Y", name: "1 Năm", limit: 10000 }
+        ]
+    }
 };
 
+let currentApp = "bach";
 let currentSelectedType = "1H";
 
 window.onload = function() {
-    if(localStorage.getItem("bach_admin_logged") === "true") {
-        showMainScreen();
-    }
-    updateStats();
+    if(localStorage.getItem("admin_logged") === "true") showMainScreen();
 };
 
 function handleLogin() {
     const u = document.getElementById("username").value;
     const p = document.getElementById("password").value;
-    const err = document.getElementById("loginError");
     if (u === ADMIN_USER && p === ADMIN_PASS) {
-        localStorage.setItem("bach_admin_logged", "true");
+        localStorage.setItem("admin_logged", "true");
         showMainScreen();
     } else {
-        err.classList.remove("hidden");
-        setTimeout(() => err.classList.add("hidden"), 3000);
+        document.getElementById("loginError").classList.remove("hidden");
     }
 }
 
 function logout() {
-    localStorage.removeItem("bach_admin_logged");
-    document.getElementById("loginScreen").classList.remove("hidden");
-    document.getElementById("mainScreen").classList.add("hidden");
+    localStorage.removeItem("admin_logged");
+    location.reload();
 }
 
 function showMainScreen() {
     document.getElementById("loginScreen").classList.add("hidden");
     document.getElementById("mainScreen").classList.remove("hidden");
+    switchApp('bach');
+}
+
+function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("hidden");
+}
+
+function switchTab(tab) {
+    document.getElementById("sideMenu").classList.add("hidden");
+    if (tab === 'inputKey') {
+        document.getElementById("sectionCreate").classList.add("hidden");
+        document.getElementById("sectionInputKey").classList.remove("hidden");
+        document.getElementById("menuTitle").innerText = "NHẬP KEY";
+    } else {
+        document.getElementById("sectionCreate").classList.remove("hidden");
+        document.getElementById("sectionInputKey").classList.add("hidden");
+    }
+}
+
+function switchApp(appId) {
+    switchTab('create');
+    currentApp = appId;
+    document.getElementById("menuTitle").innerText = Apps[appId].name;
+    currentSelectedType = Apps[appId].types[0].id;
+    
+    const container = document.getElementById("typeContainer");
+    container.innerHTML = "";
+    Apps[appId].types.forEach((t, index) => {
+        const btn = document.createElement("button");
+        btn.className = `type-btn py-2.5 px-3 rounded-md text-xs font-bold ${index === 0 ? 'active' : ''}`;
+        btn.innerText = t.name;
+        btn.onclick = () => selectType(t.id, btn);
+        container.appendChild(btn);
+    });
+    
+    document.getElementById("resultContainer").classList.add("hidden");
     updateStats();
 }
 
 function selectType(type, btn) {
     currentSelectedType = type;
-    document.querySelectorAll('.type-btn').forEach(b => {
-        b.classList.remove('active');
-        b.classList.add('type-btn');
-    });
+    document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     updateStats();
 }
 
-function generateComplexCode(length) {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let r = "";
-    for (let i = 0; i < length; i++) {
-        r += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return r;
-}
+function getKeys() { return JSON.parse(localStorage.getItem("gen_keys_v13") || "[]"); }
+function saveKeys(keys) { localStorage.setItem("gen_keys_v13", JSON.stringify(keys)); }
 
-function getGeneratedKeys() {
-    try {
-        let k = localStorage.getItem("bach_v12_keys");
-        return k ? JSON.parse(k) : [];
-    } catch(e) { return []; }
-}
-
-function saveGeneratedKeys(keys) {
-    try {
-        localStorage.setItem("bach_v12_keys", JSON.stringify(keys));
-    } catch(e) {}
-}
-
-function countKeysByType(type) {
-    let keys = getGeneratedKeys();
-    return keys.filter(k => k.startsWith("BACH-" + type + "-")).length;
+function countKeys(app, type) {
+    let prefix = app === 'bach' ? `BACH-${type}-` : `CHEATPRO-${type}-`;
+    return getKeys().filter(k => k.startsWith(prefix)).length;
 }
 
 function updateStats() {
-    let keys = getGeneratedKeys();
-    let limit = KEY_LIMITS[currentSelectedType];
-    let used = countKeysByType(currentSelectedType);
-    let remain = limit - used;
-    if (remain < 0) remain = 0;
+    let typeData = Apps[currentApp].types.find(t => t.id === currentSelectedType);
+    let used = countKeys(currentApp, currentSelectedType);
+    let remain = Math.max(0, typeData.limit - used);
     document.getElementById('keyCount').innerText = remain.toLocaleString('vi-VN');
-    document.getElementById('totalCreated').innerText = keys.length.toLocaleString('vi-VN');
+    document.getElementById('totalCreated').innerText = getKeys().length.toLocaleString('vi-VN');
+}
+
+function genCode(len) {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let r = ""; for (let i = 0; i < len; i++) r += chars.charAt(Math.floor(Math.random() * chars.length));
+    return r;
 }
 
 function generateKey() {
-    let amount = parseInt(document.getElementById("amount").value) || 1;
-    if (amount < 1) amount = 1;
-    if (amount > 100) amount = 100;
+    let amount = parseInt(document.getElementById("amountCreate").value) || 1;
+    if (amount < 1) amount = 1; if (amount > 50) amount = 50;
 
-    let keys = getGeneratedKeys();
-    let limit = KEY_LIMITS[currentSelectedType];
-    let used = countKeysByType(currentSelectedType);
-    let remain = limit - used;
+    let keys = getKeys();
+    let appData = Apps[currentApp];
+    let typeData = appData.types.find(t => t.id === currentSelectedType);
+    let remain = typeData.limit - countKeys(currentApp, currentSelectedType);
 
-    if (remain <= 0) {
-        alert("Đã đạt giới hạn " + limit.toLocaleString('vi-VN') + " key cho loại " + currentSelectedType + "!");
-        return;
-    }
-
-    if (amount > remain) {
-        amount = remain;
-    }
+    if (remain <= 0) return alert("Đã đạt giới hạn!");
+    if (amount > remain) amount = remain;
 
     let newKeys = [];
-    let attempts = 0;
-    while (newKeys.length < amount && attempts < amount * 10) {
-        let part1 = generateComplexCode(6);
-        let part2 = generateComplexCode(6);
-        let keyString = "BACH-" + currentSelectedType + "-" + part1 + "-" + part2;
-        if (!keys.includes(keyString) && !newKeys.includes(keyString)) {
-            newKeys.push(keyString);
-        }
-        attempts++;
+    while (newKeys.length < amount) {
+        let key = `${appData.prefix}-${currentSelectedType}-${genCode(4)}-${genCode(6)}`;
+        if (!keys.includes(key) && !newKeys.includes(key)) newKeys.push(key);
     }
 
-    if (newKeys.length === 0) {
-        alert("Không thể tạo key! Đã thử " + attempts + " lần.");
-        return;
-    }
-
-    keys = keys.concat(newKeys);
-    saveGeneratedKeys(keys);
+    saveKeys(keys.concat(newKeys));
     updateStats();
 
-    const keyOutput = document.getElementById('keyOutput');
-    const resultContainer = document.getElementById('resultContainer');
-    
-    if (newKeys.length === 1) {
-        keyOutput.value = newKeys[0];
-    } else {
-        keyOutput.value = newKeys.join("\n");
-    }
-    resultContainer.classList.remove('hidden');
-    document.getElementById('copyStatus').classList.add('hidden');
+    document.getElementById('keyOutput').value = newKeys.join("\n");
+    document.getElementById('resultContainer').classList.remove('hidden');
 }
 
 function copyKey() {
-    const keyOutput = document.getElementById('keyOutput');
-    keyOutput.select();
-    keyOutput.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(keyOutput.value);
-    const copyStatus = document.getElementById('copyStatus');
-    copyStatus.classList.remove('hidden');
-    setTimeout(() => { copyStatus.classList.add('hidden'); }, 2000);
+    let txt = document.getElementById('keyOutput');
+    txt.select(); document.execCommand('copy');
+    document.getElementById('copyStatus').classList.remove('hidden');
+    setTimeout(() => document.getElementById('copyStatus').classList.add('hidden'), 2000);
+}
+
+// Hàm Kiểm tra Key Nhập vào
+function checkInputKeys() {
+    let inputArea = document.getElementById("keyInputArea").value.trim();
+    let amountStr = document.getElementById("amountInput").value;
+    
+    if (inputArea === "") return alert("Vui lòng dán Key vào!");
+
+    let keysToCheck = inputArea.split("\n").map(k => k.trim()).filter(k => k !== "");
+    let requiredAmount = parseInt(amountStr) || 1;
+
+    let validKeys = [];
+    let invalidKeys = [];
+    let duplicateKeys = 0;
+    let dbKeys = getKeys(); // Key đã tạo trên hệ thống
+
+    keysToCheck.forEach(k => {
+        // 1. Kiểm tra định dạng
+        let isFormatValid = k.match(/^(BACH|CHEATPRO)-(1H|24H|1M|VIP|1Y)-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{6}$/);
+        
+        if (!isFormatValid) {
+            invalidKeys.push(k);
+        } else {
+            // 2. Kiểm tra xem key có tồn tại trong danh sách đã tạo không (nếu bạn muốn quản lý chặt)
+            // Hoặc chỉ cần đúng định dạng là được (tùy bạn)
+            if (validKeys.includes(k)) {
+                duplicateKeys++;
+            } else {
+                validKeys.push(k);
+            }
+        }
+    });
+
+    let resultText = "";
+    let color = "text-green-400";
+
+    if (validKeys.length < requiredAmount) {
+        resultText = `LỖI: Bạn cần nhập ${requiredAmount} Key, nhưng chỉ có ${validKeys.length} Key hợp lệ.`;
+        color = "text-red-400";
+    } else {
+        resultText = `THÀNH CÔNG: Đã nhập đủ ${requiredAmount} Key hợp lệ!`;
+        if (invalidKeys.length > 0) {
+            resultText += `<br><br><span class="text-yellow-400">Cảnh báo: Có ${invalidKeys.length} Key sai định dạng đã bị bỏ qua.</span>`;
+        }
+        if (duplicateKeys > 0) {
+            resultText += `<br><span class="text-yellow-400">Cảnh báo: Có ${duplicateKeys} Key bị trùng lặp.</span>`;
+        }
+    }
+
+    let resultDiv = document.getElementById("checkResult");
+    let textDiv = document.getElementById("checkText");
+    resultDiv.classList.remove("hidden");
+    textDiv.className = `text-sm font-bold ${color}`;
+    textDiv.innerHTML = resultText;
+    
+    // Lưu key vừa nhập vào thiết bị (nếu cần)
+    // localStorage.setItem("my_entered_keys", JSON.stringify(validKeys));
 }
 </script>
 </body>
